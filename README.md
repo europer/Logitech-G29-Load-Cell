@@ -56,6 +56,10 @@ That is all in a nus shell.
 
 Im an engineer and not a programmer so could be that my programming is dirty so I do not mind if somebody would pimp it up, but it works and it works like a charm.
 
+# Circuit/Wiring
+
+
+
 
 
 
