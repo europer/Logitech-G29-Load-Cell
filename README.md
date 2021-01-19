@@ -138,7 +138,7 @@ dacWrite(DAC1, 169); x 1 time
 In this video (sorry was a video for my father in law and he is a master in electronic and it was in norwegian) 
 we see the first part with Gamma factor = 1 (linear) then with Gamma 4.0 and then with Gamma = 0.30
 
-![](img/oscio.mp4)
+![](img/Osci.mp4)
 
 
 
