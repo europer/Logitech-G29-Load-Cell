@@ -58,7 +58,9 @@ Im an engineer and not a programmer so could be that my programming is dirty so 
 
 # Circuit/Wiring
 
-![](img/Schematic_G29 Break System with ESP32_2021-01-19_copy.png)
+![](img/"Schematic_G29 Break System with ESP32_2021-01-19_copy.png")
+
+
 See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
 
 
