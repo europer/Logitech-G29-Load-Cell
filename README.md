@@ -20,7 +20,7 @@ where we have overporosional force to push to reach higher break.
 
 Then the g29 and PS4 do not give any possibilites to trim the break to your driving style and this was alos one of my reason to have an micro controller so that I could setup the break after my condisitons.
 
-What whas needed:
+# Shopping list:
 1) Load Cells with HX711
 2) Micro controller
 3) Enclosering for the Micro Controller/HX711 and for the Load Cells
