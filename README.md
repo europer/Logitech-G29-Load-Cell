@@ -1,6 +1,6 @@
 # Logitech-G29-Load-Cell
 
-I will not repeat text what you can find in the References, and keep the story short:
+I will not repeat text what you can find in the "References" and keep the story short:
 
 My ideas to develop this program was due to the inspiration and using the ideas of References:
 
