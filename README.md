@@ -66,6 +66,27 @@ Pic. 1) See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wirin
 
 Pic. 2) Soldering ESP32 & HX711 on a small PCB, wiring after circuit diagram (see Pic. 1 above)
 
+# 3D Print / Encloser
+
+![](img/IMG_20201223_135214.jpg)
+
+
+![](img/IMG_20201223_135244.jpg)
+
+
+![](img/IMG_20201223_135257.jpg)
+
+
+![](img/IMG_20201223_135305.jpg)
+
+
+![](img/IMG_20201223_135328.jpg)
+
+
+![](img/IMG_20201225_120034.jpg)
+
+
+
 
 
 
