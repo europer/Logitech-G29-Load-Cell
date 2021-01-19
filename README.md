@@ -88,7 +88,59 @@ Pic. 5) The result of the raw data in a diagramm. Y:Break force [%] X:Voltage in
 
 ![](img/Lin.jpg)
 
-Pic. 6) From Pic 5 the Load was linearizated so that 50% load input = 50% break in game
+Pic. 6) From Pic 5 the Load was linearizated (from 0-1 and 0-100%) so that 50% load input = 50% break in game.
+
+The load array (is in the Arduino program) resulted into the following load array with 79 points:
+
+float load_percent[79] = {1.0, 0.963, 0.93, 0.895, 0.86, 0.835, 0.804, 0.776, 0.749, 0.725,
+                          0.701, 0.68, 0.66, 0.642, 0.625, 0.609, 0.595, 0.58, 0.564, 0.55,
+                          0.535, 0.525, 0.512, 0.498, 0.485, 0.475, 0.462, 0.455, 0.447, 0.439,
+                          0.431, 0.423, 0.416, 0.408, 0.4, 0.392, 0.384, 0.377, 0.369, 0.361,
+                          0.353, 0.345, 0.337, 0.33, 0.322, 0.314, 0.306, 0.298, 0.291, 0.283,
+                          0.275, 0.267, 0.259, 0.252, 0.247, 0.236, 0.228, 0.220, 0.212, 0.205,
+                          0.197, 0.189, 0.181, 0.173, 0.166, 0.158, 0.15, 0.142, 0.134, 0.127,
+                          0.116, 0.105, 0.094, 0.078, 0.063, 0.047, 0.031, 0.016, 0.0};
+                          
+How to understand this:
+We have after calibration the min and max point/break: 
+min break = 147 and max break = 227 in voltage this again correspond to a weight from your load cell, lets say:
+min break = 1.0 Kg and max break = 10.0 Kg
+
+We now map the input (what is the kg) to output what we need to as voltage out to correspond to the weight/force:
+
+Lets say we are pushing with a force of 5.5 kg
+
+In the program this we use a mapping function:
+mapping(weight in,min break kg, max break kg, min output, max output). 
+weight_in_percent = mapping(5.5, 1.0, 10.0, 0.0, 1.0) and yes output will be 0.50 in this case ;)
+
+From the load_percent array 0.50 is between nr 22 and nr 23 (counting with 0 as first value), 
+the program will loop trough the array to see where weight_in_percent 
+The laod_perecent range is 79 points and the max/min break from 147 to 227 = 80, not same steps so we need to map this too.
+
+lower = mapping(22, 78, 0, 227, 147) = 170
+upper = mapping(23, 78, 0, 227, 147) = 169
+
+Mean when the ESP32 send a DAC with the bit 170 and 169 we would get 50% break load, without the linearization the program would send out (147+227)/2 = 187 to DAC.
+If we look at Pic. 5 this would result into approx 37% breaking and not 50%.
+
+The program calulate out of 10 how many times it must be lower and upper so that the task (FreeRTOS) to "simulate" a PWM between 2 DAC signal, 
+in this case it would be 8 times 170 and 1 time 169 due to roundings, 
+if there is no new update from load cell and the load is the same it will just lopp and loop this value until new values comes in.
+Since this task operate without interference there are no timer since the task will be realtive constant in time and performance
+Later we will see some pictures from the oscilloscope and simulate a sinus curve and a 0,25,50,75 and 100% load curve and we will see that 
+for this application is more the good enough.
+
+in Arduino, DAC1 = Pin 25 for ESP32 (see ESP32 reference):
+dacWrite(DAC1, 170); x 8 times 
+dacWrite(DAC1, 169); x 1 time
+
+
+
+
+
+
+                    
 
 
 
