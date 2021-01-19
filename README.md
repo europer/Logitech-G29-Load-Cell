@@ -58,7 +58,6 @@ Im an engineer and not a programmer so could be that my programming is dirty so 
 
 # Circuit/Wiring
 
-/img/RAW.jpg
 
 
 
