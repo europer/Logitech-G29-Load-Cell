@@ -1,8 +1,8 @@
 # Logitech-G29-Load-Cell
 
-I will not repeat text what you can find in the "References" and keep the story short:
+I will not repeat the text what you can find in the "References" and keep the story short:
 
-My ideas to develop this program was due to the inspiration and using the ideas of References:
+My ideas to develop this program was due to the inspiration and using the ideas of the References:
 
 # References
 1) https://github.com/GeekyDeaks/g29-load-cell (original idea did come from here)
@@ -48,7 +48,7 @@ G>1.0 means that the break% is increasing over proportional, G<1.0 the opposite.
 
 Then the break needed a dead zone, means your break don’t start at zero Kg but at example 0.2 Kg.
 Then the break needed a max load = 100% break, so if you hit the break more than max load = 100% break
-Then I did read in IRacing the max load = 100% could be reduced to a %, lets say 80%, means if you break at max load = 100% (normally) it would be 80%, so I also implemented this (never know if I will do IRacing but anyway good to have)
+Then I did read in IRacing the max load = 100% could be reduced to a %, let’s say 80%, means if you break at max load = 100% (normally) it would be 80%, so I also implemented this (never know if I will do IRacing but anyway good to have)
 Then I wanted to send on the air serial commands to the ESP32 to change parameter for my breaking if trimming was needed.
 Then of course encloser for the brake system and for the ESP32 and HX711 (see 3D files)
 
@@ -77,7 +77,7 @@ Pic. 3) left part: plunger what is pushing the load to the load cell, mid part =
 
 ![](img/IMG_20201223_135328.jpg)
 
-Pic. 4) the Calibrator is just to have a platform to put load on as one time calibration for weight. I did use 2x1Kg as reference 
+Pic. 4) the Calibrator is just to have a platform to put load on as one-time calibration for weight. I did use 2x1Kg as reference 
 
 # STL Files for the Break and for the ESP32 Box:
 
@@ -88,13 +88,13 @@ See folder STL_BREAK and STL_BOX
 
 ![](img/RAW.jpg)
 
-Pic. 5) The result of the raw data in a diagramm. Y:Break force [%] X:Voltage in 8 Bit (0-255 = 0-3.3V)
+Pic. 5) The result of the raw data in a diagram. Y: Break force [%] X: Voltage in 8 Bit (0-255 = 0-3.3V)
 
 
 
 ![](img/Lin.jpg)
 
-Pic. 6) From Pic 5 the Load was linearizated (from 0-1 and 0-100%) so that 50% load input = 50% break in game.
+Pic. 6) From Pic 5 the Load was linearized (from 0-1 and 0-100%) so that 50% load input = 50% break in game.
 
 The load array (is in the Arduino program) resulted into the following load array with 79 points:
 
@@ -109,12 +109,12 @@ float load_percent[79] = {1.0, 0.963, 0.93, 0.895, 0.86, 0.835, 0.804, 0.776, 0.
                           
 How to understand this:
 We have after calibration the min and max point/break: 
-min break = 147 and max break = 227 in voltage this again correspond to a weight from your load cell, lets say:
+min break = 147 and max break = 227 in voltage this again correspond to a weight from your load cell, let’s say:
 min break = 1.0 Kg and max break = 10.0 Kg
 
 We now map the input (what is the kg) to output what we need to as voltage out to correspond to the weight/force:
 
-Lets say we are pushing with a force of 5.5 kg
+Let’s say we are pushing with a force of 5.5 kg
 
 In the program this we use a mapping function:
 mapping(weight in,min break kg, max break kg, min output, max output). 
@@ -128,36 +128,23 @@ lower = mapping(22, 78, 0, 227, 147) = 170
 upper = mapping(23, 78, 0, 227, 147) = 169
 
 Mean when the ESP32 send a DAC with the bit 170 and 169 we would get 50% break load, without the linearization the program would send out (147+227)/2 = 187 to DAC.
-If we look at Pic. 5 this would result into approx 37% breaking and not 50%.
+If we look at Pic. 5 this would result into approx. 37% breaking and not 50%.
 
-The program calulate out of 10 how many times it must be lower and upper so that the task (FreeRTOS) to "simulate" a PWM between 2 DAC signal, 
-in this case it would be 8 times 170 and 1 time 169 due to roundings, 
-if there is no new update from load cell and the load is the same it will just lopp and loop this value until new values comes in.
-Since this task operate without interference there are no timer since the task will be realtive constant in time and performance
-Later we will see some pictures from the oscillocope and simulate a sinus curve and we will see that 
+The program calculate out of 10 how many times it must be lower and upper so that the task (FreeRTOS) to "simulate" a PWM between 2 DAC signal, 
+in this case it would be 8 times 170 and 1 time 169 due to rounding, 
+if there is no new update from load cell and the load is the same it will just loop and loop this value until new values comes in.
+Since this task operate without interference there are no timer since the task will be relative constant in time and performance
+Later we will see some pictures from the oscilloscope and simulate a sinus curve and we will see that 
 for this application is more the good enough.
 
 in Arduino, DAC1 = Pin 25 for ESP32 (see ESP32 reference):
 dacWrite(DAC1, 170); x 8 times 
 dacWrite(DAC1, 169); x 1 time
 
-In this video (sorry was a video for my father in law and he is a master in electronic and it was in norwegian) 
+In this video (sorry was a video for my father-in-law and he is a master in electronic and it was in norwegian) 
 we see the first part with Gamma factor = 1 (linear) then with Gamma 4.0 and then with Gamma = 0.30
 
 https://github.com/europer/Logitech-G29-Load-Cell/blob/main/img/Osci.mp4
-
-
-
-
-
-
-
-
-
-
-                    
-
-
 
 
 
