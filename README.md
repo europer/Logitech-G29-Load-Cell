@@ -59,7 +59,7 @@ Im an engineer and not a programmer so could be that my programming is dirty so 
 # Circuit/Wiring
 
 ![](img/Circuit.png)
-See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
+Pic1: See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
 
 
 
