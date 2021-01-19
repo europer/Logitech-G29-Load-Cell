@@ -28,7 +28,7 @@ Then the g29 and PS4 do not give any possibilities to trim the break to your dri
 1) Load Cells with HX711 
 2) Micro controller 
 3) Enclosing for the Micro Controller/HX711 and for the Load Cells
-4) Resistors and cables
+4) Resistors (500 and 220 Ohm) and cables
 
 # How-to and why
 
@@ -75,8 +75,14 @@ Pic. 3) left part: plunger what is pushing the load to the load cell, mid part =
 
 ![](img/IMG_20201223_135328.jpg)
 
-Pic. 5) the Calibrator is just to have a platform to put load on as one time calibration for weight. I did use 2x1Kg as reference 
+Pic. 4) the Calibrator is just to have a platform to put load on as one time calibration for weight. I did use 2x1Kg as reference 
 
+
+# Linearization Results:
+
+![](img/RAW.jpg)
+
+Pic. 5) The result of the raw data in a diagramm. Y:Break force [%] X:Voltage in 8 Bit (0-255 = 0-3.3V)
 
 
 
