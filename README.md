@@ -8,7 +8,7 @@ My ideas to develop this program was due to the inspiration and using the ideas 
 1) https://github.com/GeekyDeaks/g29-load-cell (original idea did come from here)
 2) https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki (original idea did come from here)
 3) https://github.com/olkal/HX711_ADC (library for the HX711 I did use)
-4) https://github.com/iforce2d/thrustTester (to get the default setup of the HX711 from 10 to 80 Hz, storage my HX711 did end up with 89 Hz)
+4) https://github.com/iforce2d/thrustTester (to get the default setup of the HX711 from 10 to 80 Hz, my HX711 did end up with 89 Hz)
 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
 6) https://www.youtube.com/watch?v=iywsJB-T-mU (at 7:15, due to ESP32 speed)
 7) https://www.youtube.com/watch?v=99u9cy7Mnl4 (for mod the rubber to simulate more like a load cell)
