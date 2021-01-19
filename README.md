@@ -81,7 +81,7 @@ Pic. 4) the Calibrator is just to have a platform to put load on as one time cal
 
 # STL Files for the Break and for the ESP32 Box:
 
-https://embed.github.com/view/3d/europer/Logitech-G29-Load-Cell/master/STL_BOX/Box_Back.stl
+See folder STL_BREAK and STL_BOX
 
 
 # Linearization Results:
