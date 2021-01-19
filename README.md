@@ -86,6 +86,9 @@ Pic. 5) The result of the raw data in a diagramm. Y:Break force [%] X:Voltage in
 
 
 
+![](img/Lin.jpg)
+
+Pic. 6) From Pic 5 the Load was linearizated so that 50% load input = 50% break in game
 
 
 
