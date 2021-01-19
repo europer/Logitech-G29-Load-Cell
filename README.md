@@ -70,20 +70,21 @@ Pic. 2) Soldering ESP32 & HX711 on a small PCB, wiring after circuit diagram (se
 
 ![](img/IMG_20201223_135214.jpg)
 
+Pic. 3) left part = plunger what is pushing the load to the load cell, mid part = encloser for the 2 load cells, right upper part = calibrator, see in pic 5
+
 
 ![](img/IMG_20201223_135244.jpg)
 
 
-![](img/IMG_20201223_135257.jpg)
+Pic. 4)
 
 
-![](img/IMG_20201223_135305.jpg)
 
 
 ![](img/IMG_20201223_135328.jpg)
 
+Pic. 5)
 
-![](img/IMG_20201225_120034.jpg)
 
 
 
