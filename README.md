@@ -56,11 +56,20 @@ That is all in a nut-shell.
 
 Im an engineer and not a programmer so could be that my programming is dirty so I do not mind if somebody would pimp it up, but it works and it works like a charm.
 
-# Circuit/Wiring
+# Circuit/Wiring/PCB
 
 ![](img/Circuit.png)
 
-Pic1: See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
+Pic. 1) See Ref. 5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
+
+![](img/pcb.png)
+
+Pic. 2) Soldering ESP32 & HX711 on a small PCB, wiring after circuit diagram (see Pic. 1 above)
+
+
+
+
+
 
 
 
