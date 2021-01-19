@@ -58,7 +58,7 @@ Im an engineer and not a programmer so could be that my programming is dirty so 
 
 # Circuit/Wiring
 
-![](img/Schematic_G29 Break System with ESP32_2021-01-19_copy.png)
+![](img/Circuit.png)
 
 
 
