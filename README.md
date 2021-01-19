@@ -68,6 +68,8 @@ Pic. 2) Soldering ESP32 & HX711 on a small PCB, wiring after circuit diagram (se
 
 # 3D Print / Encloser
 
+yes, I know old filament so not the nicest but did work perfect anyway ;)
+
 ![](img/IMG_20201223_135214.jpg)
 
 Pic. 3) left part: plunger what is pushing the load to the load cell, mid part = encloser for the 2 load cells, right part = calibrator (see Pic. 4)
@@ -76,6 +78,13 @@ Pic. 3) left part: plunger what is pushing the load to the load cell, mid part =
 ![](img/IMG_20201223_135328.jpg)
 
 Pic. 4) the Calibrator is just to have a platform to put load on as one time calibration for weight. I did use 2x1Kg as reference 
+
+# STL Files for the Break and for the ESP32 Box:
+
+<script src="https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>
+
+
+
 
 
 # Linearization Results:
