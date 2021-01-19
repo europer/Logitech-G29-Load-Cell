@@ -58,7 +58,7 @@ Im an engineer and not a programmer so could be that my programming is dirty so 
 
 # Circuit/Wiring
 
-https://github.com/europer/Logitech-G29-Load-Cell/edit/main/README.md
+https://github.com/europer/Logitech-G29-Load-Cell/blob/main/img/RAW.jpg
 
 
 
