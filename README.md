@@ -84,7 +84,13 @@ Pic. 4) the Calibrator is just to have a platform to put load on as one time cal
 <script src="https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>
 
 
+ Logitech-G29-Load-Cell/STL_BOX/Box_Back.stl 
+ 
+  github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl
+  
+  <script src="https://embed.github.com/view/3d/skalnik/secret-bear-clip/master/stl/clip.stl"></script>
 
+  <script src="https://embed.github.com/view/3d/europer/Logitech-G29-Load-Cell/master/STL_BOX/Box_Back.stl"></script>
 
 
 # Linearization Results:
