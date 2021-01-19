@@ -3,13 +3,13 @@
 
 My ideas to develop this program was due to the inspiration and using the ideas of References:
 
-https://github.com/GeekyDeaks/g29-load-cell (orignal idea did come from here)
-https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki (orignal idea did come from here)
-https://github.com/olkal/HX711_ADC (libary for the HX711 I did use)
-https://github.com/iforce2d/thrustTester (to get the defalt setup of the HX711 from 10 to 80 Hz, strage my HX711 did end up with 89 Hz)
-https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
-https://www.youtube.com/watch?v=iywsJB-T-mU (at 7:15, due to ESP32 speed)
-https://www.youtube.com/watch?v=99u9cy7Mnl4 (for mod the rubber to simulate more like a load cell)
+1) https://github.com/GeekyDeaks/g29-load-cell (orignal idea did come from here)
+2) https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino/wiki (orignal idea did come from here)
+3) https://github.com/olkal/HX711_ADC (libary for the HX711 I did use)
+4) https://github.com/iforce2d/thrustTester (to get the defalt setup of the HX711 from 10 to 80 Hz, strage my HX711 did end up with 89 Hz)
+5) https://circuitjournal.com/50kg-load-cells-with-HX711 (wiring with 2 cells)
+6) https://www.youtube.com/watch?v=iywsJB-T-mU (at 7:15, due to ESP32 speed)
+7) https://www.youtube.com/watch?v=99u9cy7Mnl4 (for mod the rubber to simulate more like a load cell)
 
 and I will not refere it more in the text, since it is a mix overall and all of them above did contribut to my result.
 
