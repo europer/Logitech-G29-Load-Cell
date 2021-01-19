@@ -128,12 +128,17 @@ The program calulate out of 10 how many times it must be lower and upper so that
 in this case it would be 8 times 170 and 1 time 169 due to roundings, 
 if there is no new update from load cell and the load is the same it will just lopp and loop this value until new values comes in.
 Since this task operate without interference there are no timer since the task will be realtive constant in time and performance
-Later we will see some pictures from the oscillocope and simulate a sinus curve and a 0,25,50,75 and 100% load curve and we will see that 
+Later we will see some pictures from the oscillocope and simulate a sinus curve and we will see that 
 for this application is more the good enough.
 
 in Arduino, DAC1 = Pin 25 for ESP32 (see ESP32 reference):
 dacWrite(DAC1, 170); x 8 times 
 dacWrite(DAC1, 169); x 1 time
+
+In this video (sorry was a video from my father in law and he is a master in electronic and it was in norwegian) 
+we see the first part with Gamma factor = 1 (linear) then with Gamma 4.0 and then with Gamma = 0.30
+
+
 
 
 
