@@ -52,7 +52,7 @@ Then I did read in IRacing the max load = 100% could be reduced to a %, lets say
 Then I wanted to send on the air serial commands to the ESP32 to change parameter for my breaking if trimming was needed.
 Then of course encloser for the brake system and for the ESP32 and HX711 (see 3D files)
 
-That is all in a nus shell.
+That is all in a nut-shell.
 
 Im an engineer and not a programmer so could be that my programming is dirty so I do not mind if somebody would pimp it up, but it works and it works like a charm.
 
