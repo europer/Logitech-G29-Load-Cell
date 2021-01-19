@@ -1,0 +1,18 @@
+{
+    "authors": {
+        "name": "Seeed",
+        "url": "https://os.mbed.com/teams/Seeed/"
+    },
+    "description": "library for Bluetooth Shield from Seeed Studio",
+    "frameworks": "mbed",
+    "keywords": [
+        "bluetooth"
+    ],
+    "name": "BluetoothSerial",
+    "platforms": "*",
+    "repository": {
+        "type": "hg",
+        "url": "https://os.mbed.com/teams/Seeed/code/BluetoothSerial/"
+    },
+    "version": "0.0.0+sha.f56002898ee8"
+}
