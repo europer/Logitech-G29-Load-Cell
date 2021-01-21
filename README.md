@@ -45,7 +45,11 @@ Another issue known is that the G29 let’s say your breaking at 80% distance on
 
 Then I wanted to have a gamma factor to adjust the bias of the curve to fit my way of breaking. 
 G>1.0 means that the break% is increasing over proportional, G<1.0 the opposite. G = 1 linear.
-(see References 9) Gamma Calculation: https://www.desmos.com/calculator/swnathc6og).
+
+![](img/gamma.jpg)
+
+Pic. 0) see References #9, Gamma Calculation: https://www.desmos.com/calculator/swnathc6og. 
+Red dotted line gamma = 4, Blue dotted line gamma = 0.25 and black line gamma = 1 = linear
 
 Then the break needed a dead zone, means your break don’t start at zero Kg but at example 0.2 Kg.
 Then the break needed a max load = 100% break, so if you hit the break more than max load = 100% break
