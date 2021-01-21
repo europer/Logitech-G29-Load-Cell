@@ -160,7 +160,9 @@ I did cut the outer valve 10mm because due to shorter distance due to the new in
 I did also increase the original rubber as in Reference 7) https://www.youtube.com/watch?v=99u9cy7Mnl4 (for mod the rubber to simulate more like a load cell).
 Here you need to find your length of the rubber you need, I did increase my new "rubber" so that I had 1,5times the length from the original, but after cutting the 10mm above it was then to short, rather 2times would be better. The reason is very week spring, first when I hit the rubber the weight goes high. I do compensate this with a Gamma of 1.8 but I will further change the spring to a lot stiffer version. This part everybody needs to find at its own and I can’t give any preference what is good or bad, since this is individual.
 
+Regards the libary, in PlatformIO my local libaries are (default) in hidden folders, so as I did upload everything thouse files did not go into my github, therefore I did save them in the folder "lib". You just download them and put it where you need it in you libary system, you need perhaps to change the #inlcude from "....." to #inlcude from <.....> and then it should work for all IDE's
 
+Did it help me, YES, my lap time did reduce in average up to 3 sec and not just that, my laps are constant, less errors in general, so for around 15 Euro investment a great update, I think the best update you can do for sim racing!!!
 
 
 
