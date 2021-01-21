@@ -17,12 +17,11 @@ My ideas to develop this program was due to the inspiration and using the ideas 
 
 and I will not refer it more in the text, since it is a mix overall and all of them above did contribute to my result.
 
-The reason for this is that the G29 use pot.meter from 0-100% break over distance => give the output voltage to regulate corresponding break %
-The force feedback is more or less linear, at the end we touch a rubber what will simulate a higher pressure but anyway the muscle memory is difficult
-and constant good breaking especially in trail breaking is difficult. With a load cell we are simulating closer to real hydraulic breaks in real life
-where we have overpromotion force to push to reach higher break.
+The reason for this is that the G29 use pot.meter from 0-100% break over distance => give the output voltage to regulate corresponding break %.
+The force feedback from the spring is more or less linear and at the end we touch a rubber what will simulate a higher pressure but for the muscle memory is difficult to memorice the breaking point/level/force to get a constant good breaking especially in trail breaking is difficult. 
+With a load cell we are simulating closer to real hydraulic breaks in real life where we need over propotional force curve to reach higher break.
 
-Then the g29 and PS4 do not give any possibilities to trim the break to your driving style and this was also one of my reason to have a micro controller so that I could setup the break after my conditions.
+Then the G29 and PS4 do not give any possibilities to trim the break to your driving style and this was also one of my reason to have a micro controller so that I could manipulate the output values to fit my braking conditions.
 
 # Shopping List:
 1) Load Cells with HX711 
@@ -32,7 +31,8 @@ Then the g29 and PS4 do not give any possibilities to trim the break to your dri
 
 # How-to and why
 
-To use PWM signal to generate the needed voltage range was not good if not using a low filter or a DAC. Since I am using ESP32 anyway to other Arduino projects and for IoT and they are cheap and can even over Amazon go under 6 Euro (included delivery) is a very unexpensive MC.
+To use PWM signal to generate the needed voltage range was not good if not using a low filter or a DAC. Since I am using ESP32 anyway to other Arduino projects and they are cheap (at Amazon go under 6 Euro, included delivery) is a very unexpensive MC.
+
 The advantage:
 1) rel. fast 2xCPU with 32 bit
 2) 2 x8 bit DAC (range 0-255)
