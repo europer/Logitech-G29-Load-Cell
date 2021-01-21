@@ -18,8 +18,8 @@ My ideas to develop this program was due to the inspiration and using the ideas 
 and I will not refer it more in the text, since it is a mix overall and all of them above did contribute to my result.
 
 The reason for this is that the G29 use pot.meter from 0-100% break over distance => give the output voltage to regulate corresponding break %.
-The force feedback from the spring is more or less linear and at the end we touch a rubber what will simulate a higher pressure but for the muscle memory is difficult to memorice the breaking point/level/force to get a constant good breaking especially in trail breaking is difficult. 
-With a load cell we are simulating closer to real hydraulic breaks in real life where we need over propotional force curve to reach higher break.
+The force feedback from the spring is more or less linear and at the end we touch a rubber what will simulate a higher pressure but for the muscle memory is difficult to memorize the breaking point/level/force to get a constant good breaking especially in trail breaking is difficult. 
+With a load cell we are simulating closer to real hydraulic breaks in real life where we need over proportional force curve to reach higher break.
 
 Then the G29 and PS4 do not give any possibilities to trim the break to your driving style and this was also one of my reason to have a micro controller so that I could manipulate the output values to fit my braking conditions.
 
@@ -34,14 +34,14 @@ Then the G29 and PS4 do not give any possibilities to trim the break to your dri
 To use PWM signal to generate the needed voltage range was not good if not using a low filter or a DAC. Since I am using ESP32 anyway to other Arduino projects and they are cheap (at Amazon go under 6 Euro, included delivery) is a very unexpensive MC.
 
 The advantage:
-1) rel. fast 2xCPU with 32 bit
+1) rel. fast 2xCPU with 32 bits
 2) 2 x8 bit DAC (range 0-255)
 3) Bluetooth for serial com. for changing parameters in the setup/trimming the break
 4) Voltage range 0-3.3V fits anyway to the G29 what also is in this range
 
 That was the reason to use ESP32 and as I was work with the project I wanted to "simulate" a "PWM" with my DAC between 2 values and here the multitask function of the ESP32 was perfect, letting the main program calculate the values for breaking and if a needed value was between, let’s say 231 and 232 I would let the DAC jump between 231 and 232 in an constant loop (of course calculated how many times of 231 and 232 to get the right simulated value let say 231.12) so in this case the task would not have any "delay" but just looping and looping with the latest known values until the task did get new values. Fantastic the ESP32 :)
 
-Another issue known is that the G29 let’s say your breaking at 80% distance on the break is not equal to 80% in your PS4. G29 have an over exponential curve and I had to find out the values so that I could do a linearization of the curve (also my references are referring about this issue). After finding 0% break and 100% I had the outer points (min/max). So, 50% must be between, well was not as explained above. How to find 500%? I did find the bit value what was correspond to 50% in the game. Let’s say 0% was 210 and 100% 140 => (140+210)/2 = 175 in the DAC as bit but was not. So, you then change the bit value until you get the 50% in the game (look at the TV/Monitor and andjust the bit value until you see the colum reach 50% in my case GT Sprot). So now the work was to check for many different %-point between 0 and 100% after this I could make a load array, you could also use a function but is quicker to use points in an array and calculate the output between 2 points.
+Another issue known is that the G29 let’s say your breaking at 80% distance on the break is not equal to 80% in your PS4. G29 have an over exponential curve and I had to find out the values so that I could do a linearization of the curve (also my references are referring about this issue). After finding 0% break and 100% I had the outer points (min/max). So, 50% must be between, well was not as explained above. How to find 500%? I did find the bit value what was correspond to 50% in the game. Let’s say 0% was 210 and 100% 140 => (140+210)/2 = 175 in the DAC as bit but was not. So, you then change the bit value until you get the 50% in the game (look at the TV/Monitor and adjust the bit value until you see the column reach 50% in my case GT Sprot). So now the work was to check for many different %-point between 0 and 100% after this I could make a load array, you could also use a function but is quicker to use points in an array and calculate the output between 2 points.
 
 Then I wanted to have a gamma factor to adjust the bias of the curve to fit my way of breaking. 
 G>1.0 means that the break% is increasing over proportional, G<1.0 the opposite. G = 1 linear.
@@ -86,7 +86,10 @@ Pic. 4) the Calibrator is just to have a platform to put load on as one-time cal
 
 # STL Files for the Break and for the ESP32 Box:
 
-See folder STL_BREAK and STL_BOX
+See folder STL_BREAK and STL_BOX:
+https://github.com/europer/Logitech-G29-Load-Cell/tree/main/STL_BOX
+https://github.com/europer/Logitech-G29-Load-Cell/tree/main/STL_BREAK
+
 
 
 # Linearization Results:
@@ -122,7 +125,7 @@ We now map the input (what is the kg) to output what we need to as voltage out t
 Let’s say we are pushing with a force of 5.5 kg.
 
 In the program this we use the mapping function:
-Syntay: mapping(weight in,min break kg, max break kg, min output, max output). //own function, yes you can use the map what Arduino have, but sometimes I like my own routines.
+Syntax: mapping(weight in,min break kg, max break kg, min output, max output). //own function, yes you can use the map what Arduino have, but sometimes I like my own routines.
 
 weight_in_percent = mapping(5.5, 1.0, 10.0, 0.0, 1.0) and yes output will be 0.50 in this case ;).
 
@@ -135,9 +138,9 @@ upper = mapping(23, 78, 0, 227, 147) = 169
 Mean when the ESP32 send a DAC with the bit 170 and 169 we would get 50% break load, without the linearization the program would send out (147+227)/2 = 187 to DAC.
 If we look at Pic. 5 this would result into approx. 37% breaking and not 50%.
 
-The program calculate out of 10 how many times it must be lower and upper so that the task (FreeRTOS) to "simulate" a PWM between 2 DAC signal. 
+The program calculates out of 10 how many times it must be lower and upper so that the task (FreeRTOS) to "simulate" a PWM between 2 DAC signal. 
 In this case it would be 8 times 170 and 1 time 169 due to rounding.
-If there is no new update from the load cell or/and the load value is the same it will just loop and loop this values until new values comes in.
+If there is no new update from the load cell or/and the load value is the same it will just loop and loop these values until new values comes in.
 Since this task operate without interference there are no timer since the task will be relative constant in time and performance.
 Later in text you can see a short video from the oscilloscope and simulate a sinus curve and we will see that for this application is more the good enough.
 
@@ -145,10 +148,19 @@ In Arduino, DAC1 = Pin 25 for ESP32 (see ESP32 reference, DAC1 = 25, DAC2 = 26):
 dacWrite(DAC1, 170); x 8 times 
 dacWrite(DAC1, 169); x 1 time
 
-In this video (sorry was a video for my father-in-law and he is a master in electronic and it was in norwegian).
+In this video (sorry was a video for my father-in-law and he is a master in electronic and it was in Norwegian).
 we see the first part with Gamma factor = 1 (linear) then with Gamma 4.0 and then with Gamma = 0.25
 
 https://github.com/europer/Logitech-G29-Load-Cell/blob/main/img/Osci.mp4
+
+
+# AoB
+
+I did cut the outer valve 10mm because due to shorter distance due to the new inner valve (where the load cell is installed into) takes space in direction to the pedal I personally needed 10mm more. 
+I did also increase the original rubber as in Reference 7) https://www.youtube.com/watch?v=99u9cy7Mnl4 (for mod the rubber to simulate more like a load cell).
+Here you need to find your length of the rubber you need, I did increase my new "rubber" so that I had 1,5times the length from the original, but after cutting the 10mm above it was then to short, rather 2times would be better. The reason is very week spring, first when I hit the rubber the weight goes high. I do compensate this with a Gamma of 1.8 but I will further change the spring to a lot stiffer version. This part everybody needs to find at its own and I can’t give any preference what is good or bad, since this is individual.
+
+
 
 
 
