@@ -172,11 +172,11 @@ c = for calibrate the load cell, pushing pedal to your desired max break and 2nd
 v = for voltage calibration (max break and min break, it use the dacWrite(DAC1, wanted bit for min or max break)).
 e = read out the storage values in the eeprom since mostly we will not change values and just play the game when we have the wanted parameter ;).
 a = read out what is in RAM at given time, if you use "e" to read out eeprom it will change the values in the RAM if they could be different, since you dont need to save new values!!!.
-w = in BT-App and www = at direct conection between ESP32 and PC. Here we calibrate the load cell with known load, use the calibrator (see Pic. 5) and put know load on it, I was using 2x1kg manuall weights, but you can also use a liter of water, or 1 kg Sugar, what ever. This is just to know for your interesst what is acctually the load in Kg but is not needed, but you need to but a value here for the first time. If you dont have a refrence value push a bit, and give 1000 in (what would be normaly 1000g=1kg).
+w = in BT-App and www = at direct conection between ESP32 and PC. Here we calibrate the load cell with known load, use the calibrator (see Pic. 4) and put know load on it, I was using 2x1kg manuall weights, but you can also use a liter of water, or 1 kg Sugar, what ever. This is just to know for your interesst what is acctually the load in Kg but is not needed, but you need to but a value here for the first time. If you dont have a refrence value push a bit, and give 1000 in (what would be normaly 1000g=1kg).
 s = to have serial output of the load your have at given time (every 1 sec an new serial.print).
-l = here you can fine tune your 'c' directly into kg (max/min)
-r = reboot the ESP32
-n = using the raw data or noralisation with gamma factor
-i = simulate 1=sinus curve, 2=0,25,50,75,100% load and default is 0 what is the load cell itself
+l = here you can fine tune your 'c' directly into kg (max/min).
+r = reboot the ESP32.
+n = using the raw data or noralisation with gamma factor.
+i = simulate 1=sinus curve, 2=0,25,50,75,100% load and default is 0 what is the load cell itself.
 
  
